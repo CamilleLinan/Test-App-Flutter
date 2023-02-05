@@ -52,30 +52,39 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: BottomNavigationBar(
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  label: 'Home',
-                  icon: Icon(Icons.home_rounded),
-                ),
-                BottomNavigationBarItem(
-                  label: 'App',
-                  icon: Icon(Icons.more_horiz),
-                ),
-                BottomNavigationBarItem(
-                  label: 'Film',
-                  icon: Icon(Icons.play_arrow_rounded),
-                ),
-                BottomNavigationBarItem(
-                  label: 'Book',
-                  icon: Icon(Icons.menu_book_rounded),
-                ),
-              ],
-              currentIndex: _selectedIndex,
-              selectedItemColor: const Color(0xFF5F67EA),
-              unselectedItemColor: Colors.grey,
-              showUnselectedLabels: true,
-              onTap: _onItemTapped,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(15.0),
+                topRight: Radius.circular(15.0),
+              ),
+              child: BottomNavigationBar(
+                type: BottomNavigationBarType.fixed,
+                items: const <BottomNavigationBarItem>[
+                  BottomNavigationBarItem(
+                    label: 'Home',
+                    icon: Icon(Icons.home_rounded),
+                  ),
+                  BottomNavigationBarItem(
+                    label: 'App',
+                    icon: Icon(Icons.more_horiz),
+                  ),
+                  BottomNavigationBarItem(
+                    label: 'Film',
+                    icon: Icon(Icons.play_arrow_rounded),
+                  ),
+                  BottomNavigationBarItem(
+                    label: 'Book',
+                    icon: Icon(Icons.menu_book_rounded),
+                  ),
+                ],
+                currentIndex: _selectedIndex,
+                fixedColor: const Color(0xFF5F67EA),
+                unselectedItemColor: Colors.grey,
+                iconSize: 28,
+                unselectedFontSize: 15,
+                showUnselectedLabels: true,
+                onTap: _onItemTapped,
+              ),
             ),
           ),
         ],
