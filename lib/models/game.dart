@@ -36,6 +36,7 @@ class Game {
           'assets/images/ori2.jpg',
           'assets/images/ori3.jpg',
           'assets/images/ori4.jpg',
+          'assets/images/ori5.jpg',
         ],
       ),
       Game(
@@ -51,6 +52,22 @@ class Game {
           'assets/images/rl2.jpg',
           'assets/images/rl3.jpg',
           'assets/images/rl4.jpg',
+          'assets/images/rl5.jpg',
+        ],
+      ),
+      Game(
+        'assets/images/legend1.jpg',
+        'assets/images/legend_logo.png',
+        'League of Legends',
+        'Action',
+        3.6,
+        314,
+        282,
+        'League of Legends is stranger to peril, but when a fateful flight puts the owlet...',
+        [
+          'assets/images/legend2.jpg',
+          'assets/images/legend3.jpg',
+          'assets/images/legend4.jpg',
         ],
       ),
     ];
