@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/pages/app/app.dart';
+import 'package:myapp/pages/book/book.dart';
+import 'package:myapp/pages/film/film.dart';
+import 'package:myapp/pages/home/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,65 +10,97 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+  static const String _title = 'Game Store';
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return const MaterialApp(
+      title: _title,
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
 
-  void _incrementCounter() {
+  void _onItemTapped(int index) {
     setState(() {
-      _counter++;
+      _selectedIndex = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            const Text(
-              'Nombre de cliques :',
+      body: Stack(
+        children: <Widget>[
+          IndexedStack(
+            index: _selectedIndex,
+            children: const <Widget>[
+              HomePage(),
+              AppPage(),
+              FilmPage(),
+              BookPage(),
+            ],
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              decoration: const BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 183, 183, 183),
+                    blurRadius: 8,
+                    spreadRadius: -0.5,
+                    offset: Offset(0.0, 2.0),
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(15.0),
+                  topRight: Radius.circular(15.0),
+                ),
+                child: BottomNavigationBar(
+                  type: BottomNavigationBarType.fixed,
+                  items: const <BottomNavigationBarItem>[
+                    BottomNavigationBarItem(
+                      label: 'Home',
+                      icon: Icon(Icons.home_rounded),
+                    ),
+                    BottomNavigationBarItem(
+                      label: 'App',
+                      icon: Icon(Icons.more_horiz),
+                    ),
+                    BottomNavigationBarItem(
+                      label: 'Film',
+                      icon: Icon(Icons.play_arrow_rounded),
+                    ),
+                    BottomNavigationBarItem(
+                      label: 'Book',
+                      icon: Icon(Icons.menu_book_rounded),
+                    ),
+                  ],
+                  currentIndex: _selectedIndex,
+                  fixedColor: const Color.fromARGB(255, 84, 64, 149),
+                  unselectedItemColor: Colors.grey,
+                  iconSize: 28,
+                  unselectedFontSize: 15,
+                  showUnselectedLabels: true,
+                  onTap: _onItemTapped,
+                ),
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const Text(
-              'Et ça clique',
-              style: TextStyle(fontSize: 24),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+          ),
+        ],
       ),
     );
   }
