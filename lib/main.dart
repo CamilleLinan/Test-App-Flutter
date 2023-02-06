@@ -5,7 +5,7 @@ import 'package:myapp/pages/film/film.dart';
 import 'package:myapp/pages/home/home.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

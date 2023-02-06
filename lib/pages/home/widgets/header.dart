@@ -25,7 +25,7 @@ class HeaderSection extends StatelessWidget {
             ),
             SizedBox(height: 5),
             Text(
-              "What would you like to play ?",
+              "Ready to play ?",
               style: TextStyle(
                 fontSize: 17,
                 color: Colors.white,
