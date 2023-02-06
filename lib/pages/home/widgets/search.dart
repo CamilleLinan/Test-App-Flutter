@@ -37,7 +37,7 @@ class SearchSection extends StatelessWidget {
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: const Color(0xFF5F67EA),
+                color: const Color.fromARGB(255, 84, 64, 149),
               ),
               child: const Icon(
                 Icons.mic_outlined,

@@ -23,7 +23,7 @@ class CategorySection extends StatelessWidget {
     },
     {
       'icon': Icons.sports_esports,
-      'color': const Color(0xFF7182F2),
+      'color': const Color.fromARGB(255, 147, 205, 117),
       'title': 'More',
     },
   ];
