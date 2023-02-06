@@ -57,7 +57,7 @@ class Game {
       ),
       Game(
         'assets/images/legend1.jpg',
-        'assets/images/legend_logo.png',
+        'assets/images/legend_logo.jpg',
         'League of Legends',
         'Action',
         3.6,

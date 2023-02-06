@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/models/game.dart';
 
-class PopularGame extends StatelessWidget {
-  PopularGame({super.key});
+class PopularGames extends StatelessWidget {
+  PopularGames({super.key});
 
   final List<Game> games = Game.games();
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/pages/home/widgets/newest.dart';
 import 'package:myapp/pages/home/widgets/popular.dart';
 
 class CategorySection extends StatelessWidget {
@@ -30,7 +31,7 @@ class CategorySection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      height: 740,
       decoration: const BoxDecoration(
         color: Color.fromARGB(255, 239, 239, 239),
         borderRadius: BorderRadius.only(
@@ -57,14 +58,14 @@ class CategorySection extends StatelessWidget {
                           child: Icon(
                             categories[index]['icon'] as IconData,
                             color: Colors.white,
-                            size: 30,
+                            size: 37,
                           ),
                         ),
                         const SizedBox(height: 10),
                         Text(
                           categories[index]['title'] as String,
                           style: TextStyle(
-                            color: Colors.black.withOpacity(0.7),
+                            color: Colors.black.withOpacity(0.6),
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
                           ),
@@ -72,11 +73,12 @@ class CategorySection extends StatelessWidget {
                       ],
                     )),
                 separatorBuilder: ((context, index) =>
-                    const SizedBox(width: 25)),
+                    const SizedBox(width: 20)),
                 itemCount: categories.length),
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15),
+            margin: const EdgeInsets.only(top: 9),
             child: const Text(
               'Popular games',
               style: TextStyle(
@@ -85,9 +87,10 @@ class CategorySection extends StatelessWidget {
               ),
             ),
           ),
-          PopularGame(),
+          PopularGames(),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15),
+            margin: const EdgeInsets.only(top: 9),
             child: const Text(
               'Newest games',
               style: TextStyle(
@@ -96,6 +99,7 @@ class CategorySection extends StatelessWidget {
               ),
             ),
           ),
+          NewestGames(),
         ],
       ),
     );
