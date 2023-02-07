@@ -1,16 +1,18 @@
-# myapp
+# Test Première App avec Flutter
 
-A new Flutter project.
+Voici ma premiere application créée avec Flutter, un "Game Store" !
 
-## Getting Started
++ La barre de navigation est présente sur toutes les pages
 
-This project is a starting point for a Flutter application.
++ La page d'accueil affiche :
+  - un Header contenant une barre de recherche, 
+  - une section pour les différentes catégories de jeux contenant une liste d'icône, 
+  - une section pour jeux les plus populaires contenant liste d'images cliquables,
+  - une section pour les nouveaux jeux.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
++ La page de détail affiche : 
+  - un Header contenant une image du jeu et un bouton pour revenir à la page précèdente,
+  - une section contenant le logo du jeu ainsi que son nom, sa catégorie, sa note sur 5 et son nombre de téléchargement,
+  - une liste avec plusieurs images du jeu,
+  - une description avec la possibilité de "lire plus",
+  - une section avec la note du jeu, le nombre d'avis et un bouton pour installer le jeu (non cliquable).
