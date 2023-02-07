@@ -16,3 +16,5 @@ Voici ma premiere application créée avec Flutter, un "Game Store" !
   - une liste avec plusieurs images du jeu,
   - une description avec la possibilité de "lire plus",
   - une section avec la note du jeu, le nombre d'avis et un bouton pour installer le jeu (non cliquable).
+  
+  ![Alt text](GameStore.gif) / ![](GameStore.gif)
