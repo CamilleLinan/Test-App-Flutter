@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/models/game.dart';
 import 'package:myapp/pages/detail/widgets/detail_sliver.dart';
+import 'package:myapp/pages/detail/widgets/info.dart';
 
 class DetailGames extends StatelessWidget {
   const DetailGames(this.game, {super.key});
@@ -20,10 +21,7 @@ class DetailGames extends StatelessWidget {
             ),
           ),
           SliverToBoxAdapter(
-            child: Container(
-              height: 150,
-              color: Colors.blue,
-            ),
+            child: GameInfo(game),
           )
         ],
       ),

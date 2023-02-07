@@ -27,12 +27,17 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
           child: GestureDetector(
             onTap: () => Navigator.of(context).pop(),
             child: Container(
-              margin: EdgeInsets.only(
-                top: MediaQuery.of(context).padding.top,
+              margin: const EdgeInsets.only(
+                top: 25,
                 left: 25,
                 right: 25,
               ),
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(
+                top: 10,
+                right: 12,
+                left: 10,
+                bottom: 10,
+              ),
               decoration: BoxDecoration(
                 color: Colors.grey.withOpacity(0.5),
                 shape: BoxShape.circle,
@@ -61,10 +66,13 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
               alignment: Alignment.center,
               width: 60,
               height: 5,
-              color: const Color(0xFF5F67EA),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 120, 120, 120),
+                borderRadius: BorderRadius.circular(10),
+              ),
             ),
           ),
-        )
+        ),
       ],
     );
   }
