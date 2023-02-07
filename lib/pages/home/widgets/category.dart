@@ -45,7 +45,7 @@ class CategorySection extends StatelessWidget {
           SizedBox(
             height: 110,
             child: ListView.separated(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 18),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: ((context, index) => Column(
                       children: [
@@ -73,7 +73,7 @@ class CategorySection extends StatelessWidget {
                       ],
                     )),
                 separatorBuilder: ((context, index) =>
-                    const SizedBox(width: 20)),
+                    const SizedBox(width: 25)),
                 itemCount: categories.length),
           ),
           Container(
